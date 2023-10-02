@@ -8,8 +8,8 @@ RUN apt-get update && \
 	| grep "browser_download_url.*zip" \
 	| cut -d : -f 2,3 \
 	| tr -d \" \
-	| wget -qi - && unzip *.zip
-	
+	| wget -qi - && unzip *.zip && rm -rf *.zip
+
 
 FROM scratch AS final
-COPY --from=builder /build/* /
+COPY --from=builder /build/uBlock0.chromium /uBlock0.chromium
