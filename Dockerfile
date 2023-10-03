@@ -1,3 +1,4 @@
+# 1.52.2
 FROM debian:stable-slim AS builder
 
 WORKDIR /build
