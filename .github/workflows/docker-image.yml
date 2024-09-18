@@ -3,7 +3,7 @@ name: Deploy Images to GHCR
 on:
   push:
     branches:
-      - main
+      - light
   workflow_dispatch:
 
 permissions:
@@ -25,5 +25,5 @@ jobs:
 
           - name: 'Build Inventory Image'
             run: |
-              docker build . --tag ghcr.io/jumoog/ublock:latest
-              docker push ghcr.io/jumoog/ublock:latest
+              docker build . --tag ghcr.io/jumoog/ublock_light:latest
+              docker push ghcr.io/jumoog/ublock_light:latest
